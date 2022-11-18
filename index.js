@@ -271,7 +271,6 @@ class Peer {
         var nameGenerator = require('./nameGenerator.js');
         const displayName = nameGenerator.getName(this.id);
     
-
         this.name = {
             model: ua.device.model,
             os: ua.os.name,
@@ -316,17 +315,5 @@ class Peer {
         return uuid;
     };
 }
-
-Object.defineProperty(String.prototype, 'hashCode', {
-  value: function() {
-    var hash = 0, i, chr;
-    for (i = 0; i < this.length; i++) {
-      chr   = this.charCodeAt(i);
-      hash  = ((hash << 5) - hash) + chr;
-      hash |= 0; // Convert to 32bit integer
-    }
-    return hash;
-  }
-});
 
 new SnapdropServer();
