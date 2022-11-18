@@ -32,7 +32,7 @@ const http = require('http');
 const limiter = RateLimit({
 	windowMs: 5 * 60 * 1000, // 5 minutes
 	max: 100, // Limit each IP to 100 requests per `window` (here, per 5 minutes)
-	message: 'Too many requests from this IP Address, please try again after 5 minutes.',
+	message: '来自此IP地址的请求太多，请在5分钟后重试。',
 	standardHeaders: true, // Return rate limit info in the `RateLimit-*` headers
 	legacyHeaders: false, // Disable the `X-RateLimit-*` headers
 })
@@ -267,14 +267,10 @@ class Peer {
 
         if(!deviceName)
             deviceName = 'Unknown Device';
-
-        const displayName = uniqueNamesGenerator({
-            length: 2,
-            separator: ' ',
-            dictionaries: [colors, animals],
-            style: 'capital',
-            seed: this.id.hashCode()
-        })
+            
+        var nameGenerator = require('./nameGenerator.js');
+        const displayName = nameGenerator.getName(this.id);
+    
 
         this.name = {
             model: ua.device.model,
