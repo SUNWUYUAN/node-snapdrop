@@ -35,7 +35,7 @@ function getName(seed) {
         '大', '二', '三', '四', '五', '六', '七', ''
     );
     var givenNames = new Array(
-        '爷', '郎', '娘', '哥', '姐', '娃', '妹', ''
+        '郎', '哥', '姐', '妹', ''
     );
     Math.seed = seed.hashCode();
     var familyName = familyNames[Math.seededRandom(100, 0)];
