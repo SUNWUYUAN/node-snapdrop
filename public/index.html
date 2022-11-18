@@ -1,28 +1,28 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 
 <head>
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <!-- Web App Config -->
-    <title>Snapdrop</title>
+    <title>悟元快传</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="theme-color" content="#3367d6">
     <meta name="color-scheme" content="dark light">
     <meta name="apple-mobile-web-app-capable" content="no">
-    <meta name="apple-mobile-web-app-title" content="Snapdrop">
+    <meta name="apple-mobile-web-app-title" content="悟元快传">
     <!-- Descriptions -->
-    <meta name="description" content="Instantly share images, videos, PDFs, and links with people nearby. Peer2Peer and Open Source. No Setup, No Signup.">
+    <meta name="description" content="立即与附近的人共享图像、视频、PDF和链接。P2P和开源。没有安装,无需注册。">
     <meta name="keywords" content="File, Transfer, Share, Peer2Peer">
-    <meta name="author" content="RobinLinus">
+    <meta name="author" content="SUNWUYUAN">
     <meta property="og:title" content="Snapdrop">
     <meta property="og:type" content="article">
-    <meta property="og:url" content="https://snapdrop.net/">
-    <meta property="og:author" content="https://facebook.com/RobinLinus">
-    <meta name="twitter:author" content="@RobinLinus">
+    <meta property="og:url" content="https://drop.wuyuan.dev/">
+    <!--<meta property="og:author" content="https://facebook.com">-->
+    <meta name="twitter:author" content="@SUNWUYUAN">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:description" content="Instantly share images, videos, PDFs, and links with people nearby. Peer2Peer and Open Source. No Setup, No Signup.">
-    <meta name="og:description" content="Instantly share images, videos, PDFs, and links with people nearby. Peer2Peer and Open Source. No Setup, No Signup.">
+    <meta name="twitter:description" content="立即与附近的人共享图像、视频、PDF和链接。P2P和开源。没有安装,无需注册。">
+    <meta name="og:description" content="立即与附近的人共享图像、视频、PDF和链接。P2P和开源。没有安装,无需注册。">
     <!-- Icons -->
     <link rel="icon" sizes="96x96" href="images/favicon-96x96.png">
     <link rel="shortcut icon" href="images/favicon-96x96.png">
@@ -38,22 +38,22 @@
 
 <body translate="no">
     <header class="row-reverse">
-        <a href="#about" class="icon-button" title="About Snapdrop">
+        <a href="#about" class="icon-button" title="关于">
             <svg class="icon">
                 <use xlink:href="#info-outline" />
             </svg>
         </a>
-        <a href="#" id="theme" class="icon-button" title="Switch Darkmode/Lightmode" >
+        <a href="#" id="theme" class="icon-button" title="切换主题" >
             <svg class="icon">
                 <use xlink:href="#icon-theme" />
             </svg>
         </a>
-        <a href="#" id="notification" class="icon-button" title="Enable Notifications" hidden>
+        <a href="#" id="notification" class="icon-button" title="允许通知" hidden>
             <svg class="icon">
                 <use xlink:href="#notifications" />
             </svg>
         </a>
-        <a href="#" id="install" class="icon-button" title="Install Snapdrop" hidden>
+        <a href="#" id="install" class="icon-button" title="添加桌面快捷方式" hidden>
             <svg class="icon">
                 <use xlink:href="#homescreen" />
             </svg>
@@ -62,34 +62,34 @@
     <!-- Peers -->
     <x-peers class="center"></x-peers>
     <x-no-peers>
-        <h2>Open Snapdrop on other devices to send files</h2>
+        <h2>在其他设备上打开悟元快传以发送文件</h2>
     </x-no-peers>
-    <x-instructions desktop="Click to send files or right click to send a message" mobile="Tap to send files or long tap to send a message"></x-instructions>
+    <x-instructions desktop="单击以发送文件或右键单击以发送消息" mobile="轻按可发送文件或长按可发送消息"></x-instructions>
     <!-- Footer -->
     <footer class="column">
         <svg class="icon logo">
             <use xlink:href="#wifi-tethering" />
         </svg>
-        <div id="displayName" placeholder="The easiest way to transfer data across devices"></div>
-        <div class="font-body2">You can be discovered by everyone on this network</div>
+        <div id="displayName" placeholder="跨设备传输数据的最简单方法"></div>
+        <div class="font-body2">此网络上的每个人都可以发现您</div>
     </footer>
     <!-- Receive Dialog -->
     <x-dialog id="receiveDialog">
         <x-background class="full center">
             <x-paper shadow="2">
-                <h3>File Received</h3>
-                <div class="font-subheading" id="fileName">Filename</div>
+                <h3>文件已接收</h3>
+                <div class="font-subheading" id="fileName">文件名</div>
                 <div class="font-body2" id="fileSize"></div>
                 <div class='preview' style="visibility: hidden;">
                     <img id='img-preview' src="">
                 </div>
                 <div class="row">
-                    <label for="autoDownload" class="grow">Ask to save each file before downloading</label>
+                    <label for="autoDownload" class="grow">保存到手机前询问</label>
                     <input type="checkbox" id="autoDownload" checked="">
                 </div>
                 <div class="row-reverse">
-                    <a class="button" close id="download" title="Download File" autofocus>Save</a>
-                    <button class="button" close>Ignore</button>
+                    <a class="button" close id="download" title="Download File" autofocus>保存</a>
+                    <button class="button" close>取消</button>
                 </div>
             </x-paper>
         </x-background>
@@ -99,11 +99,11 @@
         <form action="#">
             <x-background class="full center">
                 <x-paper shadow="2">
-                    <h3>Send a Message</h3>
-                    <div id="textInput" class="textarea" role="textbox" placeholder="Send a message" autocomplete="off" autofocus contenteditable></div>
+                    <h3>发送消息</h3>
+                    <div id="textInput" class="textarea" role="textbox" placeholder="发送消息" autocomplete="off" autofocus contenteditable></div>
                     <div class="row-reverse">
-                        <button class="button" type="submit" close>Send</button>
-                        <a class="button" close>Cancel</a>
+                        <button class="button" type="submit" close>发送</button>
+                        <a class="button" close>取消</a>
                     </div>
                 </x-paper>
             </x-background>
@@ -113,18 +113,18 @@
     <x-dialog id="receiveTextDialog">
         <x-background class="full center">
             <x-paper shadow="2">
-                <h3>Message Received</h3>
+                <h3>收到消息</h3>
                 <div class="font-subheading" id="text"></div>
                 <div class="row-reverse">
-                    <button class="button" id="copy" close autofocus>Copy</button>
-                    <button class="button" close>Close</button>
+                    <button class="button" id="copy" close autofocus>复制</button>
+                    <button class="button" close>关闭</button>
                 </div>
             </x-paper>
         </x-background>
     </x-dialog>
     <!-- Toast -->
     <div class="toast-container full center">
-        <x-toast class="row" shadow="1" id="toast">File Transfer Completed</x-toast>
+        <x-toast class="row" shadow="1" id="toast">文件传输已完成</x-toast>
     </div>
     <!-- About Page -->
     <x-about id="about" class="full center column">
@@ -139,15 +139,15 @@
             <svg class="icon logo">
                 <use xlink:href="#wifi-tethering" />
             </svg>
-            <h1>Snapdrop</h1>
-            <div class="font-subheading">The easiest way to transfer files across devices<div style="font-size:10px;">Modified Node version by <a href="https://github.com/Bellisario" target="_blank">Bellisario</a></div></div>
+            <h1>悟元快传</h1>
+            <div class="font-subheading">跨设备传输文件的最简单方法<div style="font-size:10px;">感谢作者 <a href="https://github.com/RobinLinus" target="_blank">RobinLinus</a> 和修改者 <a href="https://github.com/Bellisario" target="_blank">Bellisario</a></div></div>
             <div class="row">
-                <a class="icon-button" target="_blank" href="https://github.com/RobinLinus/snapdrop" title="Snapdrop on Github" rel="noreferrer">
+                <a class="icon-button" target="_blank" href="https://github.com/SUNWUYUAN/node-snapdrop" title="Github上的悟元快传" rel="noreferrer">
                     <svg class="icon">
                         <use xlink:href="#github" />
                     </svg>
                 </a>
-                <a class="icon-button" target="_blank" href="https://www.paypal.com/donate?hosted_button_id=FTP9DXUR7LA7Q" title="Help cover the server costs!" rel="noreferrer">
+               <!-- <a class="icon-button" target="_blank" href="https://www.paypal.com/donate?hosted_button_id=FTP9DXUR7LA7Q" title="Help cover the server costs!" rel="noreferrer">
                     <svg class="icon">
                         <use xlink:href="#monetarization" />
                     </svg>
@@ -156,7 +156,7 @@
                     <svg class="icon">
                         <use xlink:href="#twitter" />
                     </svg>
-                </a>
+                </a>-->
                 <a class="icon-button" target="_blank" href="https://github.com/RobinLinus/snapdrop/blob/master/docs/faq.md" title="Frequently asked questions" rel="noreferrer">
                     <svg class="icon">
                         <use xlink:href="#help-outline" />
@@ -224,8 +224,8 @@
     <!-- no script -->
     <noscript>
         <x-noscript class="full center column">
-            <h1>Enable JavaScript</h1>
-            <h3>Snapdrop works only with JavaScript</h3>
+            <h1>请启用JavaScript</h1>
+            <h3>悟元快传仅适用于JavaScript</h3>
         </x-noscript>
         <style>
         x-noscript {
